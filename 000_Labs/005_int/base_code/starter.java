@@ -1,5 +1,5 @@
 /*
- *	Author:  
+ *	Author:  Karen Avagyan
  *  Date: 
 */
 
@@ -10,13 +10,16 @@ class starter {
 		// the string "I love to learn coding remotely." will appear in
 		// the command window when you compile and run this program.
 		
-		int two = 2;
-		int four = 4;
-		int five = 5;
-		int seven = 7;
-		int p1;
-		p1 = five*7/two%3-1;
-		System.out.println(p1);
+		int answer1;
+		int answer2;
+		int answer3;
 
+		answer1 = 5*7/2%3-1;
+		answer2 = 10%3-4*7+2;
+		answer3 = (3-7/2*5)%10;
+		
+		System.out.println(answer1);
+		System.out.println(answer2);
+		System.out.println(answer3);
 }
 }
