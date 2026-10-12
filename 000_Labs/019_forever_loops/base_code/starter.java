@@ -1,17 +1,15 @@
 /*
- *	Author:  
- *  Date: 
+ *	Author:  Karen Avagyan
+ *  Date: 10/6
 */
 
 import java.util.Scanner;
 
 class starter {
 	public static void main(String args[]) {
-		int x = 1;
 
-		while( x <= 1000){
-			System.out.println(x);
-			x = x++;
+		while(true){
+			System.out.println((int)(Math.random() * 1000) + 1);
 		}
 
 	}
