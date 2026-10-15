@@ -1,6 +1,6 @@
 /*
- *	Author:
- *  Date:
+ *	Author: Karen Avagyan
+ *  Date: 10/13
  * 	Collaborator(s): 
 */
 import java.util.Scanner;
@@ -16,8 +16,9 @@ class starter {
 	// Assume that the first number is always the smallest and the third number is always the largest.
 
 	public static void main(String args[]) {
-		System.out.println("----------------------------------------");
 		Scanner sc = new Scanner(System.in);
+
+		System.out.println("----------------------------------------");
 		System.out.print("Enter a year: ");
 		int year = sc.nextInt();
 		System.out.println();
@@ -26,6 +27,7 @@ class starter {
 		else
 			System.out.println(year + " is not a leap year!");
 
+
 		System.out.println();
 		System.out.println("----------------------------------------");
 		System.out.println("Enter a 5 digit number");
@@ -33,6 +35,7 @@ class starter {
 		int sum = getDigitSum(number);
 		System.out.println();
 		System.out.println("The sum of the digits of " + number + " is " + sum);
+		
 
 		System.out.println();
 		System.out.println("----------------------------------------");
@@ -46,5 +49,46 @@ class starter {
 		printIfConsecutive(num1, num2, num3);
 		System.out.println();
 		System.out.println("----------------------------------------");
+	}
+
+	public static boolean isLeapYear(int y){
+		boolean x; 
+		if (y % 4 == 0){
+			x = true;
+		}
+		else if (y % 400 == 0){
+			x = true;
+		}
+		else if ( y % 100 == 0){
+			x = false;
+		}
+		else{
+			x = false;
+		}
+		return x;
+
+	}
+
+	public static int getDigitSum(int n){
+		int sum = 0;
+		int sum1 = 0;
+		while(true){
+			if( n == 0){
+				break;
+			}
+				sum1 = n % 10;
+				n = n / 10;
+				sum = sum + sum1;
+			}
+		return sum;
+	}
+
+	public static void printIfConsecutive(int n1, int n2, int n3){
+		if((n1 + 1 == n2) && (n2 + 1 == n3)){
+			System.out.println("They are consecutive");
+		}
+		else{
+			System.out.println("They are not consecutive");
+		}
 	}
 }

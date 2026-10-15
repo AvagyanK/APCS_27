@@ -1,6 +1,6 @@
 /*
- *	Author:  
- *  Date: 
+ *	Author:  Karen Avagyan
+ *  Date: 10/15
 */
 
 import java.io.*;
