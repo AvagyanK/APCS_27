@@ -13,10 +13,98 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
+		Scanner sc = new Scanner(System.in);
+		int a = 0;
+		String g = "";
+		String s = "";
+		String gs = "";
+		double time = 0.0;
+		double l = 0.0;
+		double w = 0.0;
 
+		System.out.println("Welcome to Type Quest!");
+		System.out.println("It is currently "+ getTime() +" and we are ready to play!");
+		System.out.println("Given a sentence, type it as fast as possible!");
 		
+		while(true){
+			System.out.println("");
+			System.out.println("---------------------------------------------------");
+			System.out.println("Would you like to:");
+			System.out.println("1 - Play random");
+			System.out.println("2 - Play set");
+			System.out.println("3 - Quit");
+			a = sc.nextInt();
+			sc.nextLine();
+
+			if( a == 3){
+				break;
+			}
+			else{
+				while(true){
+					if(a == 1){
+						System.out.println("You've chosen to randomly select a sentence.");
+						System.out.println("");
+						System.out.println("----------------Your sentence is:------------------");
+						g = getSentence();
+						System.out.println(g);
+						System.out.println("---------------------------------------------------");
+						System.out.println("");
+						countdown();
+						
+						startTimer();
+						s = sc.nextLine();
+						time = endTimer();
+
+						System.out.println("");
+						System.out.println("Here is your results!");
+						System.out.println("Time: " + time);
+						System.out.println("Errors: " + compareSentences(g, s) +" / "+ lettersInSentence(g) +" letters");
+						l = Math.round(lettersInSentence(g) * 60 / time * 100) / 100.0;
+						System.out.println(l + " letters per minute");
+						w = Math.round(wordsInSentence(g) * 60 / time * 100) / 100.0;
+						System.out.println(w + " words per minute");
+						break;
+					}
+					else if(a == 2){
+						System.out.println("Please enter what number sentence you'd like to play.");
+						int b = sc.nextInt();
+						sc.nextLine();
+						gs = getSentence(b);
+						System.out.println("");
+						System.out.println("----------------Your sentence is:------------------");
+						System.out.println(gs);
+						System.out.println("---------------------------------------------------");
+						System.out.println("");
+						countdown();
+						
+						startTimer();
+						s = sc.nextLine();
+						time = endTimer();
+
+						System.out.println("");
+						System.out.println("Here is your results!");
+						System.out.println("Time: " + time);
+						System.out.println("Errors: " + compareSentences(gs, s) +" / "+ lettersInSentence(g) +" letters");
+						l = Math.round(lettersInSentence(gs) * 60 / time * 100) / 100.0;
+						System.out.println(l + " letters per minute");
+						w = Math.round(wordsInSentence(gs) * 60 / time * 100) / 100.0;
+						System.out.println(w + " words per minute");
+						break;
+
+					} 
+					else{
+						System.out.println("You did not select correctly, please try again.");
+						break;
+					}
+				}
+
+			}
+			
+		}
+
 	}
+		
+	
 
 	// This method returns the local current time as a String
 	public static String getTime(){
