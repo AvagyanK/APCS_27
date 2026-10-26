@@ -1,6 +1,6 @@
 /*
- *	Author:  
- *  Date: 
+ *	Author:  Karen Avagyan
+ *  Date: 10/22
 */
 
 package pkg;
@@ -17,13 +17,27 @@ public class BankAccount {
 	// -------CONSTRUCTORS-------
 	public BankAccount(){
 		owner = "";
-		accnumber = 0;
+		accnumber = nextAccountNumber;
 		balance = 0.0;
 		isActive = true;
 		nextAccountNumber ++;
 	} 
 
-	public  BankAccount(String name)
+	public  BankAccount(String name){
+		owner = name;
+		accnumber = nextAccountNumber;
+		balance = 0.0;
+		isActive = true;
+		nextAccountNumber ++;
+	}
+
+	public BankAccount(String name, double deposit){
+		owner = name;
+		accnumber = nextAccountNumber;
+		balance = deposit;
+		isActive = true;
+		nextAccountNumber ++;
+	}
 
 	// -------METHODS-------
 
