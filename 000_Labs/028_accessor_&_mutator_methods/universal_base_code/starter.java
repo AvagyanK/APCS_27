@@ -1,6 +1,6 @@
 /*
- *	Author:  
- *  Date: 
+ *	Author: Karen Avagyan
+ *  Date: 10/27
 */
 
 import pkg.*;
