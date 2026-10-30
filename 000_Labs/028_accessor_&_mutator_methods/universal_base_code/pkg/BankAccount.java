@@ -77,15 +77,17 @@ public class BankAccount {
 
 	public void closeAccount(){
 		isActive = false;
+		System.out.println("Account closed for " + owner);
 		return;
 	}
 
 	public void deposit(double d){
 		if(isActive){
 			balance = d;
+			System.out.println("Deposited $" + d);
 		}
 		else{
-			System.out.println(owner + "'s account is not active");
+			System.out.println("Account is closed. Can't deposit");
 		}
 		return;
 	}
@@ -93,9 +95,13 @@ public class BankAccount {
 	public void withdraw(double w){
 		if(isActive && w <= balance){
 			balance = balance - w;
+			System.out.println("Withdrew $" + w);
+		}
+		else if (!isActive){
+			System.out.println("Account is closed. Can't withdraw");
 		}
 		else{
-			System.out.println("The balance is not enough or the account is not active!!!");
+			System.out.println("Insufficient funds!!!");
 		}
 	}
 }
