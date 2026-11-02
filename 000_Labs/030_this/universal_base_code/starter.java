@@ -24,6 +24,8 @@ class starter {
 
 	public static void main(String args[]) {
 		// Your code goes below here
+		int total = 0;
+
 		PooleDwarf test = new PooleDwarf(randName(), (int)(Math.random() * 70) + 10);
 		PooleDwarf test2 = new PooleDwarf(randName(), (int) (Math.random() * 70) + 10);
 		PooleDwarf test3 = new PooleDwarf(randName(), (int) (Math.random() * 70) + 10);
@@ -32,12 +34,24 @@ class starter {
 		PooleDwarf test6 = new PooleDwarf(randName(), (int) (Math.random() * 70) + 10);
 		PooleDwarf test7 = new PooleDwarf(randName(), (int) (Math.random() * 70) + 10);
 
-		test.isSameName(test2.name);
-		test.isSameName(test3.name);
-		test.isSameName(test4.name);
-		test.isSameName(test5.name);
-		test.isSameName(test6.name);
-		test.isSameName(test7.name);
-	
+		if(test.isSameName(test2.name)){
+			total ++;
+		}
+		if(test.isSameName(test3.name)){
+			total ++;
+		}
+		if(test.isSameName(test4.name)){
+			total ++;
+		}
+		if(test.isSameName(test5.name)){
+			total ++;
+		}
+		if(test.isSameName(test6.name)){
+			total ++;
+		}
+		if(test.isSameName(test7.name)){
+			total ++;
+		}
+		System.out.println(test.getName() + " was the name with " + total + " matches!");
 	}
 }

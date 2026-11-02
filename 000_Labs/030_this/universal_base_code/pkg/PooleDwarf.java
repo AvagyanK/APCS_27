@@ -41,15 +41,13 @@ public class PooleDwarf {
 		this.age = age;
 	}
 
-	public void isSameName(String name){
+	public boolean isSameName(String name){
 		if(this.name == name){
-			System.out.println(true);
-			return;
+			return true;
 			
 		}
 		else{
-			System.out.println(false);
-			return;
+			return false;
 		}
 	}
 }
