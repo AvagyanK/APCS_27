@@ -1,10 +1,10 @@
 package pkg;
 
 public class Movie{
-    String movieName;
-    double rating;
-    int numRatings;
-    int revenue;
+    private String movieName;
+    private double rating;
+    private int numRatings;
+    private int revenue;
 
     double otherRating;
 
@@ -60,12 +60,36 @@ public class Movie{
     }
 
     public String revenueToString(){
-        int revenue1 = revenue%1000;
-        int revenue2 = (revenue/1000)%1000;
-        int revenue3 = (revenue/1000000)%1000;
-        String revenueS = ""+revenue3+","+revenue2+","+ revenue1;
-        return revenueS;
+        // int revenue1 = revenue%1000;
+        // int revenue2 = (revenue/1000)%1000;
+        // int revenue3 = (revenue/1000000)%1000;
+        // String revenueS = ""+revenue3+","+revenue2+","+ revenue1;
+        // return revenueS;
+
+        while(rev >= 1000){
+            int three = rev % 1000;
+            ans = three + "," + ans;
+            rev = rev / 1000
+        }
+        ans = rev + ans;
+        return ans;
     }
+
+    public Movie pirateMovie(){
+        ////////
+        Movie temp = new Movie(movieName, rating, numRatings, revenue);
+        return temp;
+
+        ////or
+
+        // return new Movie(movieName, rating, numRatings, revenue)
+
+        ////or 
+        
+        // return this;
+
+        ////////
+    }    
 
 
 }

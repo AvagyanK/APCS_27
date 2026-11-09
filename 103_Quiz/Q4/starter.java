@@ -59,9 +59,10 @@ class starter {
 
 		// // Part 7	--------------------------------------------- Extra
 
-		// Movie dupC = mC.pirateMovie();			// Populates dupC with a copy of the movie mC
-		// dupC.movieToString();
-		// System.out.println("-----------------------------");
-
+		///////
+		Movie dupC = mC.pirateMovie();			// Populates dupC with a copy of the movie mC
+		dupC.movieToString();
+		System.out.println("-----------------------------");
+		////////
 	}
 }
